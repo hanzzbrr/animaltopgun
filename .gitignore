@@ -70,6 +70,8 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
+#Plugins
+/Assets/Plugins
 
 # Assets
 /Assets/Acorn Bringer Assets
@@ -89,4 +91,15 @@ crashlytics-build.properties
 /Assets/44.1 General Library (Free Sample Pack)
 /Assets/Free Pack
 /Assets/Modern Weapons Pack
-/Assets/Plugins
+/Assets/BookmarkEverything
+/Assets/Grapher
+/Assets/Hierarchy 2
+/Assets/JsonDotNet
+/Assets/Lean
+/Assets/NaughtyAttributes
+/Assets/Pixelplacement
+/Assets/Rotary Heart
+/Assets/RuneFire_Studios
+/Assets/SO Architecture
+/Assets/UnityMarkdownViewer
+/Assets/LINQToGameObject

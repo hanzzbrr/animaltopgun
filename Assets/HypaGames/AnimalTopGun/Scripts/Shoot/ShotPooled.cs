@@ -1,29 +1,33 @@
 ﻿using UnityEngine;
 
-public class ShotPooled : MonoBehaviour
+namespace HypaGames.AnimalTopGun
 {
-    private ShotPool _shotPool;
-
-    [SerializeField]
-    private float maxLifeTime = 5f;
-    private float lifeTime;
-
-    public void Init(ShotPool shotPool)
+    public class ShotPooled : MonoBehaviour
     {
-        _shotPool = shotPool;
-    }
+        private ShotPool _shotPool;
 
-    private void OnEnable()
-    {
-        lifeTime = 0f;
-    }
+        [SerializeField]
+        private float maxLifeTime = 5f;
+        private float lifeTime;
 
-    public void Update()
-    {
-        lifeTime += Time.deltaTime;
-        if (lifeTime > maxLifeTime)
+        public void Init(ShotPool shotPool)
         {
-            _shotPool.ReturnToPool(this);
+            _shotPool = shotPool;
+        }
+
+        private void OnEnable()
+        {
+            lifeTime = 0f;
+        }
+
+        public void Update()
+        {
+            lifeTime += Time.deltaTime;
+            if (lifeTime > maxLifeTime)
+            {
+                _shotPool.ReturnToPool(this);
+            }
         }
     }
+
 }

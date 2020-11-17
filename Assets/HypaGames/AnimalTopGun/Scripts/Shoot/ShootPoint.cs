@@ -2,75 +2,77 @@
 using UnityEngine.Jobs;
 using Unity.Jobs;
 
-public class ShootPoint : MonoBehaviour
+namespace HypaGames.AnimalTopGun
 {
-    [SerializeField]
-    private ShotPool shotPool;
-
-    [SerializeField] 
-    private float fireRate = 0.1f;
-    private float nextFire;
-
-    [SerializeField]
-    private float bulletSpeed;
-
-    TransformAccessArray transforms;
-    MovementJob moveJob;
-    JobHandle moveHandle;
-
-    private void Start()
+    public class ShootPoint : MonoBehaviour
     {
-        transforms = new TransformAccessArray(0, -1);
-    }
+        [SerializeField]
+        private ShotPool shotPool;
 
+        [SerializeField]
+        private float fireRate = 0.1f;
+        private float nextFire;
 
-    private void Update()
-    {
-        PerformShoot();
+        [SerializeField]
+        private float bulletSpeed;
 
-        moveHandle.Complete();
+        TransformAccessArray transforms;
+        MovementJob moveJob;
+        JobHandle moveHandle;
 
-        moveJob = new MovementJob()
+        private void Start()
         {
-            moveSpeed = bulletSpeed,
-            deltaTime = Time.deltaTime
-        };
+            transforms = new TransformAccessArray(0, -1);
+        }
 
-        moveHandle = moveJob.Schedule(transforms);
 
-        JobHandle.ScheduleBatchedJobs();
-    }
-
-    void OnDisable()
-    {
-        moveHandle.Complete();
-        transforms.Dispose();
-    }
-
-    private void PerformShoot()
-    {
-        if (Time.time > nextFire)
+        private void Update()
         {
-            bool newCreated = false;
+            PerformShoot();
 
             moveHandle.Complete();
 
-            nextFire = Time.time + fireRate;
-            ShotPooled shotPooled = shotPool.Get(out newCreated);
-            if (newCreated)
+            moveJob = new MovementJob()
             {
-                transforms.Add(shotPooled.transform);
-                shotPooled.Init(shotPool);
+                moveSpeed = bulletSpeed,
+                deltaTime = Time.deltaTime
+            };
+
+            moveHandle = moveJob.Schedule(transforms);
+
+            JobHandle.ScheduleBatchedJobs();
+        }
+
+        void OnDisable()
+        {
+            moveHandle.Complete();
+            transforms.Dispose();
+        }
+
+        private void PerformShoot()
+        {
+            if (Time.time > nextFire)
+            {
+                bool newCreated = false;
+
+                moveHandle.Complete();
+
+                nextFire = Time.time + fireRate;
+                ShotPooled shotPooled = shotPool.Get(out newCreated);
+                if (newCreated)
+                {
+                    transforms.Add(shotPooled.transform);
+                    shotPooled.Init(shotPool);
+                }
+                shotPool.ActivateObject(shotPooled.gameObject);
+
+                transforms.capacity = shotPool.GetPoolCount();
+
+                shotPooled.transform.position = transform.position;
+                shotPooled.transform.rotation = transform.rotation;
+                //Debug.Log(newCreated + " length: " + transforms.length);
             }
-            shotPool.ActivateObject(shotPooled.gameObject);
-
-            transforms.capacity = shotPool.GetPoolCount();
-
-            shotPooled.transform.position = transform.position;
-            shotPooled.transform.rotation = transform.rotation;
-
- 
-            //Debug.Log(newCreated + " length: " + transforms.length);
         }
     }
+
 }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace AnimalTopGun.Scripts
+namespace HypaGames.AnimalTopGun
 {
     public class WeaponDirection : MonoBehaviour
     {

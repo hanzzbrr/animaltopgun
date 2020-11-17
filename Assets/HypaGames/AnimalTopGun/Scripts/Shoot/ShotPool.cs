@@ -1,5 +1,9 @@
 ﻿using HelpersLib.Scripts;
 
-public class ShotPool : HelpersLib.Scripts.GenericObjectPool<ShotPooled>
+namespace HypaGames.AnimalTopGun
 {
+    public class ShotPool : HelpersLib.Scripts.GenericObjectPool<ShotPooled>
+    {
+    }
+
 }

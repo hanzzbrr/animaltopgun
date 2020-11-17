@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace AnimalTopGun.Scripts
+namespace HypaGames.AnimalTopGun
 {
 
     public class WeaponHolder : MonoBehaviour
@@ -12,7 +12,7 @@ namespace AnimalTopGun.Scripts
 
         private void Awake()
         {
-            SpawnGun();
+            //SpawnGun();
         }
 
         private void SpawnGun()

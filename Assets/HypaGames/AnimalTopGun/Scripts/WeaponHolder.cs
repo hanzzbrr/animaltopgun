@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using HelpersLib.Editor;
 
 namespace AnimalTopGun.Scripts
 {

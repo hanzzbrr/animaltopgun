@@ -4,6 +4,9 @@ using Unity.Jobs;
 
 public class ShootPoint : MonoBehaviour
 {
+    [SerializeField]
+    private ShotPool shotPool;
+
     [SerializeField] 
     private float fireRate = 0.1f;
     private float nextFire;
@@ -53,18 +56,20 @@ public class ShootPoint : MonoBehaviour
             moveHandle.Complete();
 
             nextFire = Time.time + fireRate;
-            ShotPooled shotPooled =  ShotPool.Instance.Get(out newCreated);
-            ShotPool.Instance.ActivateObject(shotPooled.gameObject);
+            ShotPooled shotPooled = shotPool.Get(out newCreated);
+            if (newCreated)
+            {
+                transforms.Add(shotPooled.transform);
+                shotPooled.Init(shotPool);
+            }
+            shotPool.ActivateObject(shotPooled.gameObject);
 
-            transforms.capacity = ShotPool.Instance.GetPoolCount();
+            transforms.capacity = shotPool.GetPoolCount();
 
             shotPooled.transform.position = transform.position;
             shotPooled.transform.rotation = transform.rotation;
 
-            if (newCreated)
-            {
-                transforms.Add(shotPooled.transform);
-            }
+ 
             //Debug.Log(newCreated + " length: " + transforms.length);
         }
     }

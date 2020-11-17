@@ -2,9 +2,16 @@
 
 public class ShotPooled : MonoBehaviour
 {
+    private ShotPool _shotPool;
+
     [SerializeField]
     private float maxLifeTime = 5f;
     private float lifeTime;
+
+    public void Init(ShotPool shotPool)
+    {
+        _shotPool = shotPool;
+    }
 
     private void OnEnable()
     {
@@ -16,7 +23,7 @@ public class ShotPooled : MonoBehaviour
         lifeTime += Time.deltaTime;
         if (lifeTime > maxLifeTime)
         {
-            ShotPool.Instance.ReturnToPool(this);
+            _shotPool.ReturnToPool(this);
         }
     }
 }

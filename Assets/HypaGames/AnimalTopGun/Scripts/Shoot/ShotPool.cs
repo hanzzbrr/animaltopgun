@@ -1,3 +1,5 @@
-﻿public class ShotPool : HelpersLib.Scripts.GenericObjectPool<ShotPooled>
+﻿using HelpersLib.Scripts;
+
+public class ShotPool : HelpersLib.Scripts.GenericObjectPool<ShotPooled>
 {
 }

@@ -2,7 +2,7 @@
 using UnityEditor;
 using System.Collections.Generic;
 
-namespace HypaGames.PhaseMap
+namespace HypaGames.AnimalTopGun
 {
     public enum PhaseType { Rest, Fight, Boss }
 

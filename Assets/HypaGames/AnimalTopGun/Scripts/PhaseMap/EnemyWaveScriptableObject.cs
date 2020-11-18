@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace HypaGames.PhaseMap
+namespace HypaGames.AnimalTopGun
 {
     [CreateAssetMenu(fileName = "EnemyWave", menuName = "Hypa Games/Enemy Wave", order = 1)]
     [System.Serializable]

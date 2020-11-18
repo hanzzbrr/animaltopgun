@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace HypaGames.PhaseMap
+namespace HypaGames.AnimalTopGun
 {
     [CreateAssetMenu(fileName = "Phase Map", menuName = "Hypa Games/Phase Map", order = 1)]
     [System.Serializable]

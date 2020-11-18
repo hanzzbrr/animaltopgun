@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace HypaGames.PhaseMap
+namespace HypaGames.AnimalTopGun
 {
     public class PhasePlayer : MonoBehaviour
     {

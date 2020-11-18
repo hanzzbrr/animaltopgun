@@ -7,7 +7,8 @@ namespace HypaGames.AnimalTopGun
     // have a life cycle dependent on pool
     public class ShotPooled : MonoBehaviour
     {
-        private ShotPool _shotPool;
+
+        public ShotPool ShotPool;
         private Tracker _tracker;
 
         [SerializeField]
@@ -16,7 +17,7 @@ namespace HypaGames.AnimalTopGun
 
         public void Init(ShotPool shotPool)
         {
-            _shotPool = shotPool;
+            ShotPool = shotPool;
         }
         
         public void InitTracker(Tracker tracker)
@@ -40,9 +41,16 @@ namespace HypaGames.AnimalTopGun
                 {
                     _tracker.RemoveFromTrack();
                 }
-                _shotPool.ReturnToPool(this);
+                ShotPool.ReturnToPool(this);
             }
         }
+
+        public void ReturnToPool()
+        {
+            ShotPool.ReturnToPool(this);
+        }
+
+
     }
 
 }

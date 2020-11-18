@@ -10,8 +10,13 @@ namespace HypaGames.AnimalTopGun
     [System.Serializable]
     public class PhaseScriptableObject : ScriptableObject
     {
+        [SerializeField]
+        private string _phaseName;
+
         public List<EnemyWaveScriptableObject> EnemyWave;
         public PhaseType PhaseType;
         public float TimeDuration;
+
+        public string PhaseName { get => _phaseName; }
     }
 }

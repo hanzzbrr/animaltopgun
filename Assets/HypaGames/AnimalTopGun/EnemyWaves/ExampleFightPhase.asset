@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a115cc08222c91643a475cb27973a36a, type: 3}
+  m_Name: ExampleFightPhase
+  m_EditorClassIdentifier: 
+  EnemyWave:
+  - {fileID: 11400000, guid: 6822ab23bffb27e48b6efc7e0ace44d9, type: 2}
+  - {fileID: 11400000, guid: 17628fb780fc9674c87c8a482a5d810e, type: 2}
+  PhaseType: 1
+  TimeDuration: 0

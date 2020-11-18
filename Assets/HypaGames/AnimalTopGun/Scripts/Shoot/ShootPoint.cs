@@ -4,8 +4,24 @@ using Unity.Jobs;
 
 namespace HypaGames.AnimalTopGun
 {
+
+    // Properties:
+    // Creating objects per time
+    // can create as infinitive objects as enless count
+    // all objects move linear
+    // use pools
     public class ShootPoint : MonoBehaviour
     {
+        [SerializeField]
+        private bool _isTracked;
+        private Tracker _tracker;
+
+        [SerializeField]
+        private bool _isInfinite = true;
+        [SerializeField]
+        private int _maxShots;
+        private int _shotCount = 0;
+
         [SerializeField]
         private ShotPool shotPool;
 
@@ -20,6 +36,14 @@ namespace HypaGames.AnimalTopGun
         MovementJob moveJob;
         JobHandle moveHandle;
 
+        private void OnEnable()
+        {
+            if (_isTracked)
+            {
+                _tracker = FindObjectOfType<Tracker>();
+            }
+        }
+
         private void Start()
         {
             transforms = new TransformAccessArray(0, -1);
@@ -28,7 +52,18 @@ namespace HypaGames.AnimalTopGun
 
         private void Update()
         {
-            PerformShoot();
+            if (_isInfinite)
+            {
+                PerformShoot();
+            }
+            else
+            {
+                if (_shotCount < _maxShots)
+                {
+                    PerformShoot();
+                }
+            }
+
 
             moveHandle.Complete();
 
@@ -53,6 +88,10 @@ namespace HypaGames.AnimalTopGun
         {
             if (Time.time > nextFire)
             {
+                if (!_isInfinite)
+                {
+                    _shotCount++;
+                }
                 bool newCreated = false;
 
                 moveHandle.Complete();
@@ -63,6 +102,10 @@ namespace HypaGames.AnimalTopGun
                 {
                     transforms.Add(shotPooled.transform);
                     shotPooled.Init(shotPool);
+                }
+                if (_tracker)
+                {
+                    shotPooled.InitTracker(_tracker);
                 }
                 shotPool.ActivateObject(shotPooled.gameObject);
 

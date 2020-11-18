@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73a61241b0cd09a4094d489b59bca7f1, type: 3}
+  m_Name: CowWave
+  m_EditorClassIdentifier: 
+  EnemySpawnerPrefab: {fileID: 8636569148796083262, guid: 55360c3e7715850408469ac1a19c4790,
+    type: 3}
+  Count: 3
+  XOffset: 0
+  ZOffset: 0
+  Delay: 0
+  YAngle: 0

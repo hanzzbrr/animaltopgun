@@ -11,7 +11,7 @@ namespace HypaGames.AnimalTopGun
         {
             if(other.tag == "Enemy")
             {
-                _shotPooled.ReturnToPool();
+                _shotPooled.EndLife();
             }
         }
     }

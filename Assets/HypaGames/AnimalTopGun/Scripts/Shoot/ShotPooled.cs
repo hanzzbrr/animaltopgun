@@ -37,16 +37,16 @@ namespace HypaGames.AnimalTopGun
             lifeTime += Time.deltaTime;
             if (lifeTime > maxLifeTime)
             {
-                if (_tracker)
-                {
-                    _tracker.RemoveFromTrack();
-                }
-                ShotPool.ReturnToPool(this);
+                EndLife();
             }
         }
 
-        public void ReturnToPool()
+        public void EndLife()
         {
+            if (_tracker)
+            {
+                _tracker.RemoveFromTrack();
+            }
             ShotPool.ReturnToPool(this);
         }
 

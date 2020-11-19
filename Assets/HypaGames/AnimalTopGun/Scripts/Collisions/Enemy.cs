@@ -34,7 +34,7 @@ namespace HypaGames.AnimalTopGun
         private void OnDeath()
         {
             // something like death animation
-            _shotPooled.ReturnToPool();
+            _shotPooled.EndLife();
         }
     }
 }

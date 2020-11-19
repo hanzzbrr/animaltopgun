@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShotPool: {fileID: 0}
-  maxLifeTime: 25
+  maxLifeTime: 15
 --- !u!54 &1215219474205887136
 Rigidbody:
   m_ObjectHideFlags: 0

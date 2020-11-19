@@ -12,14 +12,17 @@ namespace HypaGames.AnimalTopGun
         public void AddToTrack()
         {
             _trackedCount++;
+            Debug.Log(_trackedCount);
         }
 
         public void RemoveFromTrack()
         {
             _trackedCount--;
+            Debug.Log(_trackedCount);
             if(_trackedCount == 0)
             {
                 NoEnemiesLeft.Invoke();
+                Debug.Log("Wave ended");
             }
         }
 

@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+using HelpersLib.Scripts;
 
 namespace HypaGames.AnimalTopGun
 {
@@ -6,6 +8,9 @@ namespace HypaGames.AnimalTopGun
     {
         [SerializeField]
         private Tracker _tracker;
+
+        [SerializeField]
+        private PlayableArea _playableArea;
 
         [SerializeField]
         private float _trackerDelay = 2.5f;
@@ -21,27 +26,28 @@ namespace HypaGames.AnimalTopGun
             InitPhase();
         }
 
-        private void Update()
+        private void OnDisable()
         {
-            PlayMap();
+            Debug.Log("Map Ended");
         }
 
         private void InitPhase()
         {
             _currentPhaseIndex++;
+            if(_currentPhaseIndex == PhaseMap.PhaseMap.Count)
+            {
+                this.enabled = false;
+                return;
+            }
+
             CurrentPhase = PhaseMap.PhaseMap[_currentPhaseIndex];
-            Debug.Log("CurrentPhase: " + CurrentPhase.PhaseName + " : " + CurrentPhase.PhaseType);
             if (CurrentPhase.PhaseType == PhaseType.Rest)
             {
-                _nextPhaseTime = Time.time + CurrentPhase.TimeDuration;
+                StartCoroutine(PlayRestPhase());
             }
             else if (CurrentPhase.PhaseType == PhaseType.Fight)
             {
-                _tracker.NoEnemiesLeft.AddListener(OnWaveEnded);
-            }
-            else if (CurrentPhase.PhaseType == PhaseType.Boss)
-            {
-                _tracker.NoEnemiesLeft.AddListener(OnWaveEnded);
+                StartCoroutine(FightPhase());
             }
         }
 
@@ -50,12 +56,36 @@ namespace HypaGames.AnimalTopGun
             _nextPhaseTime = Time.time + _trackerDelay;
         }
 
-        private void PlayMap()
+        private IEnumerator PlayRestPhase()
         {
-            if(Time.time > _nextPhaseTime)
+            _nextPhaseTime = Time.time + CurrentPhase.TimeDuration;
+            Debug.Log("Phase BEGIN: " + CurrentPhase.name);
+            while (Time.time < _nextPhaseTime)
             {
-                InitPhase();
+                Debug.Log("Time: " + Time.time + " nexPhase: " + _nextPhaseTime);
+                yield return new WaitForEndOfFrame();
             }
+            Debug.Log("End of phase");
+            InitPhase();            
+        }
+
+        private IEnumerator FightPhase()
+        {
+            _tracker.enabled = true;           
+
+            foreach(var enemyWave in CurrentPhase.EnemyWave)
+            {
+                
+            }
+
+            Debug.Log("Phase begin: " + CurrentPhase.name);
+            while (_tracker.AreEnemiesLeft)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+            Debug.Log("End of phase: " + CurrentPhase.name);
+            _tracker.enabled = false;
+            InitPhase();
         }
     }
 }

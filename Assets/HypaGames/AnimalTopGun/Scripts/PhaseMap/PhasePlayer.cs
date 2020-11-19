@@ -75,6 +75,13 @@ namespace HypaGames.AnimalTopGun
 
             foreach(var enemyWave in CurrentPhase.EnemyWave)
             {
+                GameObject newWave = Instantiate(enemyWave.EnemySpawnerPrefab);
+                newWave.transform.position = new Vector3(
+                    _playableArea.transform.position.x + enemyWave.XOffset,
+                    _playableArea.transform.position.y + enemyWave.YOffset,
+                    _playableArea.LengthBorder.x + enemyWave.ZOffset
+                    );
+                newWave.GetComponent<ShootPoint>().enabled = true;             
                 
             }
 

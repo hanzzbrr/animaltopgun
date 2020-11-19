@@ -70,7 +70,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8636569148796083262}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
   m_LocalPosition: {x: -0.7460349, y: 63.6892, z: 442.2475}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -90,8 +90,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe29c24ff2635924a9a964482d12b5cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isTracked: 1
   _isInfinite: 0
-  _maxShots: 15
+  _maxShots: 4
   shotPool: {fileID: 8636569148557188171}
   fireRate: 1
   bulletSpeed: 5

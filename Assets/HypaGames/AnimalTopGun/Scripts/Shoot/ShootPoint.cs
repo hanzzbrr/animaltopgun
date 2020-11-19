@@ -42,10 +42,6 @@ namespace HypaGames.AnimalTopGun
             {
                 _tracker = FindObjectOfType<Tracker>();
             }
-        }
-
-        private void Start()
-        {
             transforms = new TransformAccessArray(0, -1);
         }
 

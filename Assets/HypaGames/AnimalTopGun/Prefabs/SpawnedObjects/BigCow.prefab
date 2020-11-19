@@ -70,7 +70,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbecc68a1299dde4b814cc069420fedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLifeTime: 40
+  ShotPool: {fileID: 0}
+  maxLifeTime: 7
 --- !u!1 &1891567489379212919
 GameObject:
   m_ObjectHideFlags: 0

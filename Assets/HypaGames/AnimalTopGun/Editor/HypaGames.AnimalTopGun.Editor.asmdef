@@ -1,0 +1,17 @@
+{
+    "name": "HypaGames.AnimalTopGun.Editor",
+    "references": [
+        "GUID:be922ace32dc5614596b1b881f0103bb"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

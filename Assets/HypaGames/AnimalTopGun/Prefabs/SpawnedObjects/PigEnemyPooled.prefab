@@ -101,9 +101,12 @@ GameObject:
   - component: {fileID: 4416004517237983854}
   - component: {fileID: 4329244311947075466}
   - component: {fileID: 5422480899581106014}
+  - component: {fileID: 833258540347646350}
+  - component: {fileID: 6003515618175226332}
+  - component: {fileID: 5667265274394857267}
   m_Layer: 0
   m_Name: PigEnemyPooled
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,7 +162,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbecc68a1299dde4b814cc069420fedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLifeTime: 15
+  ShotPool: {fileID: 0}
+  maxLifeTime: 7
+--- !u!54 &833258540347646350
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4414135449607124796}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!135 &6003515618175226332
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4414135449607124796}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.8
+  m_Center: {x: 0, y: 0.72, z: 0}
+--- !u!114 &5667265274394857267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4414135449607124796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fa86abb20076e49b316d0efe38badc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 5
+  _shotPooled: {fileID: 5422480899581106014}
 --- !u!1 &4414235508252081034
 GameObject:
   m_ObjectHideFlags: 0

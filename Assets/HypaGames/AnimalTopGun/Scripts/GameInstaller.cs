@@ -1,6 +1,6 @@
 using UnityEngine;
 using Zenject;
-using HypaGames.LevelGeneration;
+using HypaGames.LevelGeneration.Scripts;
 
 namespace HypaGames.AnimalTopGun
 {

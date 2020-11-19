@@ -9,13 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73a61241b0cd09a4094d489b59bca7f1, type: 3}
-  m_Name: CowWave
+  m_Script: {fileID: 11500000, guid: a115cc08222c91643a475cb27973a36a, type: 3}
+  m_Name: RestPhase2
   m_EditorClassIdentifier: 
-  EnemySpawnerPrefab: {fileID: 8636569148796083262, guid: 55360c3e7715850408469ac1a19c4790,
-    type: 3}
-  Count: 5
-  XOffset: 0
-  ZOffset: 0
-  Delay: 0
-  YAngle: 0
+  _phaseName: ExampleRest4
+  EnemyWave: []
+  PhaseType: 0
+  TimeDuration: 2

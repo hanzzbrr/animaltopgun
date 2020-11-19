@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de0941dfacc8d62449aad2d29bfe2fe6, type: 3}
-  m_Name: Level1Example
+  m_Name: Level1Example 1
   m_EditorClassIdentifier: 
   PhaseMap:
   - {fileID: 11400000, guid: a96368b8b70efbc49a451d55d217eda4, type: 2}
-  - {fileID: 11400000, guid: 4143a74e249ce59408221e25e4188e84, type: 2}
-  - {fileID: 11400000, guid: a96368b8b70efbc49a451d55d217eda4, type: 2}
   - {fileID: 11400000, guid: 48e5d55f3d2cfb54f86f7cce07fa1a57, type: 2}
   - {fileID: 11400000, guid: 0dd55959546be9c4c888f182710b8413, type: 2}
+  - {fileID: 11400000, guid: 48e5d55f3d2cfb54f86f7cce07fa1a57, type: 2}

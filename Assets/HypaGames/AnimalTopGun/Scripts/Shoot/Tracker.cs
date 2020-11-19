@@ -14,7 +14,7 @@ namespace HypaGames.AnimalTopGun
 
         private void OnEnable()
         {
-            AreEnemiesLeft = false;
+            AreEnemiesLeft = true;
         }
 
         private void OnDisable()
@@ -34,8 +34,7 @@ namespace HypaGames.AnimalTopGun
             Debug.Log(_trackedCount);
             if(_trackedCount == 0)
             {
-                NoEnemiesLeft.Invoke();
-                AreEnemiesLeft = true;
+                AreEnemiesLeft = false;
                 Debug.Log("Wave ended");
             }
         }

@@ -9,10 +9,9 @@ namespace HypaGames.AnimalTopGun
         public GameObject EnemySpawnerPrefab;
         public int Count;
         public float XOffset;
+        public float YOffset;
         public float ZOffset;
         public float Delay;
         public float YAngle;
-
-        public ShootPoint EnemySpawner { get => EnemySpawnerPrefab.GetComponent<ShootPoint>(); }
     }
 }

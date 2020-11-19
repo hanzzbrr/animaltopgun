@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using HypaGames.LevelGeneration;
+using HypaGames.LevelGeneration.Scripts;
 
 namespace HypaGames.AnimalTopGun
 {

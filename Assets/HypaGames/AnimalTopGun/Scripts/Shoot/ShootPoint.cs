@@ -109,6 +109,11 @@ namespace HypaGames.AnimalTopGun
                 //Debug.Log(newCreated + " length: " + transforms.length);
             }
         }
+
+        public void DeactivateAllObjects()
+        {
+            shotPool.DeactivateAllObjects();
+        }
     }
 
 }

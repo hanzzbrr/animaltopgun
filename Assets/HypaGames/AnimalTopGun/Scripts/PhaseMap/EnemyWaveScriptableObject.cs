@@ -16,5 +16,7 @@ namespace HypaGames.AnimalTopGun
         public float ZOffset;
         public float Delay;
         public float YAngle;
+
+        public bool IsBossPhase;
     }
 }

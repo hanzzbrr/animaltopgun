@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using HelpersLib.Scripts;
+using System.Linq;
 
 namespace HypaGames.AnimalTopGun
 {
@@ -94,6 +95,11 @@ namespace HypaGames.AnimalTopGun
             while (_tracker.AreEnemiesLeft)
             {
                 yield return new WaitForEndOfFrame();
+            }
+            if(CurrentPhase.EnemyWave.Any(wave => wave.IsBossPhase))
+            {
+                Debug.Log("Destroy all enemies sygnal");
+                Debug.Break();
             }
             Debug.Log("End of phase: " + CurrentPhase.name);
             _tracker.enabled = false;

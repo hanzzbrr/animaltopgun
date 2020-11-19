@@ -23,4 +23,4 @@ MonoBehaviour:
   ZOffset: -15
   Delay: 0
   YAngle: 0
-  HP: 0
+  IsBossPhase: 1

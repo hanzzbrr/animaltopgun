@@ -9,6 +9,13 @@ namespace HypaGames.AnimalTopGun
         [SerializeField]
         ShotPooled _shotPooled;
 
+        ExplosionPool _explosionPool;
+
+        private void Awake()
+        {
+            _explosionPool = FindObjectOfType<ExplosionPool>();
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.tag == "PlayerShot")
@@ -33,7 +40,7 @@ namespace HypaGames.AnimalTopGun
         }
         private void OnDeath()
         {
-            // something like death animation
+            _explosionPool.PlayExplosion(transform.position);
             _shotPooled.EndLife();
         }
     }

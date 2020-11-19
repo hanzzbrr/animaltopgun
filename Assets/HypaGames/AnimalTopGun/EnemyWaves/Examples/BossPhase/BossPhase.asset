@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a115cc08222c91643a475cb27973a36a, type: 3}
   m_Name: BossPhase
   m_EditorClassIdentifier: 
-  _phaseName: 
-  EnemyWave: []
-  PhaseType: 0
+  _phaseName: Boss Phase Example
+  EnemyWave:
+  - {fileID: 11400000, guid: 6b140e1883f08bd428a8e38c87046e59, type: 2}
+  - {fileID: 11400000, guid: 8e5239a3a1a45c742933e35e35db8a9c, type: 2}
+  - {fileID: 11400000, guid: df75282abf9207749bdc9a26ef11fda3, type: 2}
+  PhaseType: 1
   TimeDuration: 0

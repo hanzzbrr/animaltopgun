@@ -11,8 +11,14 @@ namespace HypaGames.AnimalTopGun
         {
             if(other.tag == "Enemy")
             {
-                _shotPooled.EndLife();
+                OnDeath();
             }
+        }
+
+        private void OnDeath()
+        {
+            // something like animation
+            _shotPooled.EndLife();
         }
     }
 }

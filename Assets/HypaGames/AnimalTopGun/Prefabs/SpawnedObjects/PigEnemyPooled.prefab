@@ -205,6 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1fa86abb20076e49b316d0efe38badc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _particles: {fileID: 0}
   HP: 5
   _shotPooled: {fileID: 5422480899581106014}
 --- !u!1 &4414235508252081034

@@ -81,7 +81,12 @@ namespace HypaGames.AnimalTopGun
                     _playableArea.transform.position.y + enemyWave.YOffset,
                     _playableArea.LengthBorder.x + enemyWave.ZOffset
                     );
-                newWave.GetComponent<ShootPoint>().enabled = true;             
+                ShootPoint shootPoint = newWave.GetComponent<ShootPoint>();
+                shootPoint.IsTracked = enemyWave.IsTracked;
+                shootPoint.fireRate = enemyWave.WaveRate;
+                shootPoint.bulletSpeed = enemyWave.WaveSpeed;
+                shootPoint._maxShots = enemyWave.Count;
+                shootPoint.enabled = true;             
                 
             }
 

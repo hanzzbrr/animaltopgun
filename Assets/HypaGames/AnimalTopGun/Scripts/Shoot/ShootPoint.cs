@@ -12,25 +12,22 @@ namespace HypaGames.AnimalTopGun
     // use pools
     public class ShootPoint : MonoBehaviour
     {
-        [SerializeField]
-        private bool _isTracked;
+        [System.NonSerialized]
+        public bool IsTracked;
         private Tracker _tracker;
 
         [SerializeField]
         private bool _isInfinite = true;
-        [SerializeField]
-        private int _maxShots;
+        public int _maxShots;
         private int _shotCount = 0;
 
         [SerializeField]
         private ShotPool shotPool;
 
-        [SerializeField]
-        private float fireRate = 0.1f;
+        public float fireRate = 0.1f;
         private float nextFire;
 
-        [SerializeField]
-        private float bulletSpeed;
+        public float bulletSpeed;
 
         TransformAccessArray transforms;
         MovementJob moveJob;
@@ -38,7 +35,7 @@ namespace HypaGames.AnimalTopGun
 
         private void OnEnable()
         {
-            if (_isTracked)
+            if (IsTracked)
             {
                 _tracker = FindObjectOfType<Tracker>();
             }

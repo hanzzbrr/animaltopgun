@@ -8,7 +8,7 @@ namespace HypaGames.AnimalTopGun
         private Tracker _tracker;
 
         private SpawnPool _spawnPool;
-
+        private float _spawnedSpeed;
 
         [SerializeField]
         private float maxLifeTime = 5f;

@@ -10,17 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73a61241b0cd09a4094d489b59bca7f1, type: 3}
-  m_Name: PigWaveRight
+  m_Name: PigWaveLeft 1
   m_EditorClassIdentifier: 
-  IsTracked: 1
-  EnemySpawnerPrefab: {fileID: 2663282475734676998, guid: 585dfea2927e9bc4da7b2531775ef539,
-    type: 3}
+  IsTracked: 0
+  EnemyType: 0
   Count: 7
   WaveSpeed: 2
   WaveRate: 1
-  XOffset: 2
+  XOffset: -3
   YOffset: 0
   ZOffset: 7
   Delay: 0
   YAngle: 0
-  HP: 0
+  IsBossPhase: 0

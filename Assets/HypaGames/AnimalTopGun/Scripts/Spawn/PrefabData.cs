@@ -5,6 +5,7 @@ namespace HypaGames.AnimalTopGun
     public class PrefabData : MonoBehaviour
     {
         public GameObject PigPrefab;
+        public GameObject PigToPlayer;
         public GameObject CowPrefab;
         public GameObject BigCowPrefab;
         public GameObject BossPrefab;
@@ -21,6 +22,8 @@ namespace HypaGames.AnimalTopGun
                     return BigCowPrefab;
                 case EnemyTypeConsts.Boss:
                     return BossPrefab;
+                case EnemyTypeConsts.PigToPlayer:
+                    return PigToPlayer;
                 default:
                     return null;
             }

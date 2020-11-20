@@ -71,7 +71,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 15
+  moveSpeed: -2
   _spawnedPooled: {fileID: 3029573518925884729}
+  _baseMoveStrategy: {fileID: 11400000, guid: a55630ff43590ae43a664b806d730c2f, type: 2}
 --- !u!114 &3029573518925884729
 MonoBehaviour:
   m_ObjectHideFlags: 0

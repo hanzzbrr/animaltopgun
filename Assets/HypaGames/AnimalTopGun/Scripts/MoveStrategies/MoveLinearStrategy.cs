@@ -7,7 +7,7 @@ namespace HypaGames.AnimalTopGun
     {
         public override void PerformMove(Transform originTransform, float speed)
         {
-            originTransform.transform.Translate(-Vector3.forward * speed * Time.deltaTime);
+            originTransform.transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
     }
 }

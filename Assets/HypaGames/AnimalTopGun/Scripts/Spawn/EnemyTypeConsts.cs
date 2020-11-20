@@ -2,7 +2,7 @@
 
 namespace HypaGames.AnimalTopGun
 {
-    public enum EnemyTypeConsts { Pig, Cow, BigCow, Boss}
+    public enum EnemyTypeConsts { Pig, Cow, BigCow, Boss, PigToPlayer}
 
 
 }

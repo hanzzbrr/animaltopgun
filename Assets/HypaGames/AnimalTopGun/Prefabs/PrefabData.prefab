@@ -45,6 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PigPrefab: {fileID: 4414135449607124796, guid: 2da3c152c54c5af4d8ed766a96d35e2c,
     type: 3}
+  PigToPlayer: {fileID: 4414135449607124796, guid: c3886642eb2c24d46a46f6dc446012cf,
+    type: 3}
   CowPrefab: {fileID: 1644521481828498724, guid: dcdfaca3339ff9a45a5fb62e8b6f14ba,
     type: 3}
   BigCowPrefab: {fileID: 1891542904491835565, guid: cfa36b29c0ec7304a9efa7990407831d,

@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 5667265274394857267}
   - component: {fileID: 8418937494096385418}
   m_Layer: 0
-  m_Name: PigEnemyPooled
+  m_Name: PigToPlayer
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -192,9 +192,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 5
-  moveSpeed: -5
+  moveSpeed: 5
   _spawnedPooled: {fileID: 8418937494096385418}
-  _baseMoveStrategy: {fileID: 11400000, guid: a55630ff43590ae43a664b806d730c2f, type: 2}
+  _baseMoveStrategy: {fileID: 11400000, guid: 4f9d9c2de5e536f40bdc62121db6164e, type: 2}
 --- !u!114 &8418937494096385418
 MonoBehaviour:
   m_ObjectHideFlags: 0

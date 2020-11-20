@@ -3,11 +3,14 @@ using System.Collections;
 using HelpersLib.Scripts;
 using System.Linq;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 namespace HypaGames.AnimalTopGun
 {
     public class PhasePlayer : MonoBehaviour
     {
+        public UnityEvent BossPhaseStarted;
+
         public Spawner SpawnerPrefab;
         public SpawnPool SpawnPoolPrefab;
 
@@ -81,9 +84,15 @@ namespace HypaGames.AnimalTopGun
 
         private IEnumerator FightPhase()
         {
-            _tracker.enabled = true;           
+            _tracker.enabled = true;
 
-            foreach(var enemyWave in CurrentPhase.EnemyWave)
+            if (CurrentPhase.EnemyWave.Any(wave => wave.IsBossPhase))
+            {
+                Debug.Log("Boss Phase started");
+                BossPhaseStarted?.Invoke();
+            }
+
+            foreach (var enemyWave in CurrentPhase.EnemyWave)
             {
                 GameObject newWave = Instantiate(SpawnerPrefab.gameObject);
                 newWave.transform.position = new Vector3(

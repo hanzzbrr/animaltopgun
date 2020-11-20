@@ -7,7 +7,7 @@ namespace HypaGames.AnimalTopGun
         public int HP;
 
         [SerializeField]
-        ShotPooled _shotPooled;
+        SpawnedPooled _spawnedPooled;
 
         ExplosionPool _explosionPool;
 
@@ -41,7 +41,7 @@ namespace HypaGames.AnimalTopGun
         private void OnDeath()
         {
             _explosionPool.PlayExplosion(transform.position);
-            _shotPooled.EndLife();
+            _spawnedPooled.EndLife();
         }
     }
 }

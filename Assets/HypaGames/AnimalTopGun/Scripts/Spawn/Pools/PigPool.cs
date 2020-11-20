@@ -2,8 +2,7 @@
 
 namespace HypaGames.AnimalTopGun
 {
-    public class ShotPool : GenericObjectPool<ShotPooled>
+    public class PigPool : SpawnPool
     {
     }
-
 }

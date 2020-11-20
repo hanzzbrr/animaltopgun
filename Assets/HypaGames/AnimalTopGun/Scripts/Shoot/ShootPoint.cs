@@ -13,29 +13,11 @@ namespace HypaGames.AnimalTopGun
     // use pools
     public class ShootPoint : MonoBehaviour
     {
-        [Header("Stay in player area options")]
-        [SerializeField]
-        private bool _stayInPlayerArea;
-        [SerializeField]
-        private PlayerController _player;
-        [SerializeField]
-        private float _playerZOffset;
-
-        [Header("Tracker options")]
-        [System.NonSerialized]
-        public bool IsTracked;
-        private Tracker _tracker;
-
-        [SerializeField]
-        private bool _isInfinite = true;
-        public int _maxShots;
-        private int _shotCount = 0;
-
         [SerializeField]
         private ShotPool shotPool;
 
         public float fireRate = 0.1f;
-        private float _nextSpawnTime;
+        private float _nextShotTime;
 
         public float bulletSpeed;
 
@@ -45,32 +27,13 @@ namespace HypaGames.AnimalTopGun
 
         private void OnEnable()
         {
-            if (IsTracked)
-            {
-                _tracker = FindObjectOfType<Tracker>();
-            }
-            if (_stayInPlayerArea)
-            {
-                _player = FindObjectOfType<PlayerController>();
-            }
             transforms = new TransformAccessArray(0, -1);
         }
 
 
         private void Update()
         {
-            if (_isInfinite)
-            {
-                PerformSpawn();
-            }
-            else
-            {
-                if (_shotCount < _maxShots)
-                {
-                    PerformSpawn();
-                }
-            }
-
+            PerformShot();
             PerformMove();
         }
 
@@ -98,35 +61,22 @@ namespace HypaGames.AnimalTopGun
             moveHandle = moveJob.Schedule(transforms);
 
             JobHandle.ScheduleBatchedJobs();
-
-            if (_stayInPlayerArea)
-            {
-
-            }
         }
 
-        private void PerformSpawn()
+        private void PerformShot()
         {
-            if (Time.time > _nextSpawnTime)
+            if (Time.time > _nextShotTime)
             {
-                if (!_isInfinite)
-                {
-                    _shotCount++;
-                }
                 bool newCreated = false;
 
                 moveHandle.Complete();
 
-                _nextSpawnTime = Time.time + fireRate;
+                _nextShotTime = Time.time + fireRate;
                 ShotPooled shotPooled = shotPool.Get(out newCreated);
                 if (newCreated)
                 {
                     transforms.Add(shotPooled.transform);
                     shotPooled.Init(shotPool);
-                }
-                if (_tracker)
-                {
-                    shotPooled.InitTracker(_tracker);
                 }
                 shotPool.ActivateObject(shotPooled.gameObject);
 
@@ -134,7 +84,6 @@ namespace HypaGames.AnimalTopGun
 
                 shotPooled.transform.position = transform.position;
                 shotPooled.transform.rotation = transform.rotation;
-                //Debug.Log(newCreated + " length: " + transforms.length);
             }
         }
     }

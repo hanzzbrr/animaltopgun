@@ -100,10 +100,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4416004517237983854}
   - component: {fileID: 4329244311947075466}
-  - component: {fileID: 5422480899581106014}
   - component: {fileID: 833258540347646350}
   - component: {fileID: 6003515618175226332}
   - component: {fileID: 5667265274394857267}
+  - component: {fileID: 8418937494096385418}
   m_Layer: 0
   m_Name: PigEnemyPooled
   m_TagString: Enemy
@@ -150,20 +150,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5422480899581106014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4414135449607124796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbecc68a1299dde4b814cc069420fedb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShotPool: {fileID: 0}
-  maxLifeTime: 7
 --- !u!54 &833258540347646350
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -205,9 +191,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1fa86abb20076e49b316d0efe38badc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _particles: {fileID: 0}
   HP: 5
-  _shotPooled: {fileID: 5422480899581106014}
+  _spawnedPooled: {fileID: 8418937494096385418}
+--- !u!114 &8418937494096385418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4414135449607124796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45374368e7ba1144597e24a90d20a4e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLifeTime: 5
 --- !u!1 &4414235508252081034
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,11 +2,19 @@
 using System.Collections;
 using HelpersLib.Scripts;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace HypaGames.AnimalTopGun
 {
     public class PhasePlayer : MonoBehaviour
     {
+        public Spawner SpawnerPrefab;
+        public SpawnPool SpawnPoolPrefab;
+
+        public PrefabData PrefabData;
+
+        public Dictionary<EnemyTypeConsts, SpawnPool> SpawnPools;
+
         [SerializeField]
         private Tracker _tracker;
 
@@ -24,6 +32,7 @@ namespace HypaGames.AnimalTopGun
 
         private void OnEnable()
         {
+            InitPools();
             InitPhase();
         }
 
@@ -76,18 +85,23 @@ namespace HypaGames.AnimalTopGun
 
             foreach(var enemyWave in CurrentPhase.EnemyWave)
             {
-                GameObject newWave = Instantiate(enemyWave.EnemySpawnerPrefab);
+                GameObject newWave = Instantiate(SpawnerPrefab.gameObject);
                 newWave.transform.position = new Vector3(
                     _playableArea.transform.position.x + enemyWave.XOffset,
                     _playableArea.transform.position.y + enemyWave.YOffset,
                     _playableArea.LengthBorder.x + enemyWave.ZOffset
                     );
-                ShootPoint shootPoint = newWave.GetComponent<ShootPoint>();
-                shootPoint.IsTracked = enemyWave.IsTracked;
-                shootPoint.fireRate = enemyWave.WaveRate;
-                shootPoint.bulletSpeed = enemyWave.WaveSpeed;
-                shootPoint._maxShots = enemyWave.Count;
-                shootPoint.enabled = true;             
+                Spawner spawner = newWave.GetComponent<Spawner>();
+                spawner.InitSpawner(
+                    enemyWave.IsTracked,
+                    false,
+                    enemyWave.Count,
+                    enemyWave.WaveRate,
+                    enemyWave.WaveSpeed,
+                    SpawnPools[enemyWave.EnemyType]
+                    );
+
+                spawner.enabled = true;             
                 
             }
 
@@ -105,5 +119,26 @@ namespace HypaGames.AnimalTopGun
             _tracker.enabled = false;
             InitPhase();
         }
+
+        private void InitPools()
+        {
+            SpawnPools = new Dictionary<EnemyTypeConsts, SpawnPool>();
+            foreach(var phase in PhaseMap.PhaseMap.Where(x => x.PhaseType == PhaseType.Fight))
+            {
+                foreach(var enemyWave in phase.EnemyWave)
+                {
+                    if (!SpawnPools.ContainsKey(enemyWave.EnemyType))
+                    {
+                        GameObject newSpawnPoolObj = Instantiate(SpawnPoolPrefab.gameObject);
+                        newSpawnPoolObj.gameObject.name = enemyWave.EnemyType.ToString() + "_Pool" ;
+                        SpawnPool newSpawnPool = newSpawnPoolObj.GetComponent<SpawnPool>();
+                        newSpawnPool.prefab = PrefabData.GetPrefab(enemyWave.EnemyType).GetComponent<SpawnedPooled>();
+                        SpawnPools.Add(enemyWave.EnemyType, newSpawnPoolObj.GetComponent<SpawnPool>());
+                    }
+                }
+            }
+        }
     }
+
+    
 }

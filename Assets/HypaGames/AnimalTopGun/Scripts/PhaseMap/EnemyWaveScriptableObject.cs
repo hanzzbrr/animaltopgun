@@ -7,7 +7,7 @@ namespace HypaGames.AnimalTopGun
     public class EnemyWaveScriptableObject : ScriptableObject
     {
         public bool IsTracked;
-        public GameObject EnemySpawnerPrefab;
+        public EnemyTypeConsts EnemyType;
         public int Count;
         public float WaveSpeed;
         public float WaveRate;

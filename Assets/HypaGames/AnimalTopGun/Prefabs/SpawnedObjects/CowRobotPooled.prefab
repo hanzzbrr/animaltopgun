@@ -255,10 +255,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1646141707235615610}
   - component: {fileID: 1694526260084720804}
-  - component: {fileID: 3680135113688205109}
   - component: {fileID: 1215219474205887136}
   - component: {fileID: 5427761748255650128}
   - component: {fileID: 6336781329717471465}
+  - component: {fileID: 2273777990506737257}
   m_Layer: 0
   m_Name: CowRobotPooled
   m_TagString: Enemy
@@ -305,20 +305,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3680135113688205109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1644521481828498724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbecc68a1299dde4b814cc069420fedb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShotPool: {fileID: 0}
-  maxLifeTime: 7
 --- !u!54 &1215219474205887136
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -361,7 +347,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 15
-  _shotPooled: {fileID: 3680135113688205109}
+  _spawnedPooled: {fileID: 2273777990506737257}
+--- !u!114 &2273777990506737257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644521481828498724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45374368e7ba1144597e24a90d20a4e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLifeTime: 5
 --- !u!1 &1644567239898653694
 GameObject:
   m_ObjectHideFlags: 0

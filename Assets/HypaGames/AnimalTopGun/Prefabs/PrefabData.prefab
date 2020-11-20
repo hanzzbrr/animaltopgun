@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9023173399846860573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 976872065357416770}
+  - component: {fileID: 369670104927212134}
+  m_Layer: 0
+  m_Name: PrefabData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &976872065357416770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9023173399846860573}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.6239262, y: 38.051636, z: 360.8749}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &369670104927212134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9023173399846860573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde10802d07c33d4db049fd1d482faae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PigPrefab: {fileID: 4414135449607124796, guid: 2da3c152c54c5af4d8ed766a96d35e2c,
+    type: 3}
+  CowPrefab: {fileID: 1644521481828498724, guid: dcdfaca3339ff9a45a5fb62e8b6f14ba,
+    type: 3}
+  BigCowPrefab: {fileID: 1891542904491835565, guid: cfa36b29c0ec7304a9efa7990407831d,
+    type: 3}
+  BossPrefab: {fileID: 7499099251039305928, guid: dd72e470b41570c47a7d2795810a7878,
+    type: 3}

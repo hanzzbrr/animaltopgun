@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Jobs;
 using Unity.Jobs;
+using HelpersLib.Scripts;
 
 namespace HypaGames.AnimalTopGun
 {
@@ -12,6 +13,15 @@ namespace HypaGames.AnimalTopGun
     // use pools
     public class ShootPoint : MonoBehaviour
     {
+        [Header("Stay in player area options")]
+        [SerializeField]
+        private bool _stayInPlayerArea;
+        [SerializeField]
+        private PlayerController _player;
+        [SerializeField]
+        private float _playerZOffset;
+
+        [Header("Tracker options")]
         [System.NonSerialized]
         public bool IsTracked;
         private Tracker _tracker;
@@ -25,7 +35,7 @@ namespace HypaGames.AnimalTopGun
         private ShotPool shotPool;
 
         public float fireRate = 0.1f;
-        private float nextFire;
+        private float _nextSpawnTime;
 
         public float bulletSpeed;
 
@@ -39,6 +49,10 @@ namespace HypaGames.AnimalTopGun
             {
                 _tracker = FindObjectOfType<Tracker>();
             }
+            if (_stayInPlayerArea)
+            {
+                _player = FindObjectOfType<PlayerController>();
+            }
             transforms = new TransformAccessArray(0, -1);
         }
 
@@ -47,17 +61,32 @@ namespace HypaGames.AnimalTopGun
         {
             if (_isInfinite)
             {
-                PerformShoot();
+                PerformSpawn();
             }
             else
             {
                 if (_shotCount < _maxShots)
                 {
-                    PerformShoot();
+                    PerformSpawn();
                 }
             }
 
+            PerformMove();
+        }
 
+        void OnDisable()
+        {
+            FinishMove();
+        }
+
+        private void FinishMove()
+        {
+            moveHandle.Complete();
+            transforms.Dispose();
+        }
+
+        private void PerformMove()
+        {
             moveHandle.Complete();
 
             moveJob = new MovementJob()
@@ -69,17 +98,16 @@ namespace HypaGames.AnimalTopGun
             moveHandle = moveJob.Schedule(transforms);
 
             JobHandle.ScheduleBatchedJobs();
+
+            if (_stayInPlayerArea)
+            {
+
+            }
         }
 
-        void OnDisable()
+        private void PerformSpawn()
         {
-            moveHandle.Complete();
-            transforms.Dispose();
-        }
-
-        private void PerformShoot()
-        {
-            if (Time.time > nextFire)
+            if (Time.time > _nextSpawnTime)
             {
                 if (!_isInfinite)
                 {
@@ -89,7 +117,7 @@ namespace HypaGames.AnimalTopGun
 
                 moveHandle.Complete();
 
-                nextFire = Time.time + fireRate;
+                _nextSpawnTime = Time.time + fireRate;
                 ShotPooled shotPooled = shotPool.Get(out newCreated);
                 if (newCreated)
                 {

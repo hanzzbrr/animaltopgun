@@ -11,11 +11,13 @@ namespace HypaGames.AnimalTopGun
         public int Count;
         public float WaveSpeed;
         public float WaveRate;
+        public float WaveHP;
         public float XOffset;
         public float YOffset;
         public float ZOffset;
         public float Delay;
         public float YAngle;
+        public float SpawnedLifeTime;
 
         public bool IsBossPhase;
     }

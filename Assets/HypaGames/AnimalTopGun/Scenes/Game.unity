@@ -254,6 +254,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60ef4f2ab7c01af4783e28991a7bf461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BossPhaseStarted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1403903807}
+        m_MethodName: BossPhaseStarted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   SpawnerPrefab: {fileID: 8609836400092420599, guid: 467442eb746f64246826da6bbe84e977,
     type: 3}
   SpawnPoolPrefab: {fileID: 3286950784784727506, guid: c7a465b09c32d9b41bc807a488bfbc44,
@@ -471,6 +485,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4758e3a1e3fe4443a829daf3de02572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1519616261
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3161590181684939375, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_Name
+      value: Water Specular (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1726
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 97878204633644688ffb5ce1b2632894, type: 3}
 --- !u!1 &1737380173
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +631,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1914300177
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3161590181684939375, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_Name
+      value: Water Specular
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 726
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 97878204633644688ffb5ce1b2632894, type: 3}
 --- !u!1001 &6140631864979752104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -560,6 +712,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnvironmentGenerator
       objectReference: {fileID: 0}
+    - target: {fileID: 6140631866057717900, guid: 65e2428b4f8906648a36c58fe11b0840,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6140631866057717901, guid: 65e2428b4f8906648a36c58fe11b0840,
         type: 3}
       propertyPath: PlayArea
@@ -568,7 +725,7 @@ PrefabInstance:
     - target: {fileID: 6140631866057717901, guid: 65e2428b4f8906648a36c58fe11b0840,
         type: 3}
       propertyPath: TemplateLineLength
-      value: 7
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6140631866057717901, guid: 65e2428b4f8906648a36c58fe11b0840,
         type: 3}
@@ -648,6 +805,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1403903807, guid: 1d105cd1760917c4ca9b8e2e1eec0f9f, type: 3}
+      propertyPath: _phasePlayer
+      value: 
+      objectReference: {fileID: 969288785}
     - target: {fileID: 2215702838961889500, guid: 1d105cd1760917c4ca9b8e2e1eec0f9f,
         type: 3}
       propertyPath: m_LocalPosition.x

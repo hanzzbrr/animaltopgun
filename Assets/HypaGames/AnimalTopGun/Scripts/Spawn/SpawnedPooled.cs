@@ -10,19 +10,18 @@ namespace HypaGames.AnimalTopGun
         private SpawnPool _spawnPool;
         private float _spawnedSpeed;
 
-        [SerializeField]
-        private float maxLifeTime = 5f;
+        private float _maxLifeTime = 5f;
         private float lifeTime;
 
-        public void Init(SpawnPool spawnPool)
+        public void Init(SpawnPool spawnPool, float maxLifeTime)
         {
+            _maxLifeTime = maxLifeTime;
             _spawnPool = spawnPool;
         }
 
         public void InitTracker(Tracker tracker)
         {
             _tracker = tracker;
-            _tracker.AddToTrack();
         }
 
         private void OnEnable()
@@ -34,7 +33,7 @@ namespace HypaGames.AnimalTopGun
         public void Update()
         {
             lifeTime += Time.deltaTime;
-            if (lifeTime > maxLifeTime)
+            if (lifeTime > _maxLifeTime)
             {
                 EndLife();
             }

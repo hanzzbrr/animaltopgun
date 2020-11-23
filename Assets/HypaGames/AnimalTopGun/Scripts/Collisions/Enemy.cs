@@ -2,10 +2,10 @@
 
 namespace HypaGames.AnimalTopGun
 {
-    public class Enemy : MonoBehaviour
+    public class Enemy : MonoBehaviour, IHealthContainer, ISpeedContainer
     {
-        public int HP;
-        public float moveSpeed;
+        private float HP;
+        private float moveSpeed;
 
         [SerializeField]
         SpawnedPooled _spawnedPooled;
@@ -18,7 +18,7 @@ namespace HypaGames.AnimalTopGun
         private void Awake()
         {
             _explosionPool = FindObjectOfType<ExplosionPool>();
-            _baseMoveStrategy = ScriptableObject.Instantiate(_baseMoveStrategy);
+            _baseMoveStrategy = Instantiate(_baseMoveStrategy);
         }
 
         private void Update()
@@ -53,5 +53,24 @@ namespace HypaGames.AnimalTopGun
             _explosionPool.PlayExplosion(transform.position);
             _spawnedPooled.EndLife();
         }
+
+        public void SetHP(float value)
+        {
+            HP = value;
+        }
+
+        public void SetSpeed(float value)
+        {
+            moveSpeed = value;
+        }
+    }
+
+    public interface IHealthContainer
+    {
+        void SetHP(float value);
+    }
+    public interface ISpeedContainer
+    {
+        void SetSpeed(float value);
     }
 }

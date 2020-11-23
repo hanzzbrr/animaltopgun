@@ -9,17 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73a61241b0cd09a4094d489b59bca7f1, type: 3}
-  m_Name: BossWaveExample
+  m_Script: {fileID: 11500000, guid: d8ab2a4a712932e468ca5d4f8cfd550c, type: 3}
+  m_Name: SentryMove
   m_EditorClassIdentifier: 
-  IsTracked: 1
-  EnemyType: 3
-  Count: 1
-  WaveSpeed: 1
-  WaveRate: 0
-  XOffset: 0
-  YOffset: 0
-  ZOffset: -15
-  Delay: 0
-  YAngle: 0
-  IsBossPhase: 1
+  zOffset: 0
+  zOffsetBorders: {x: -2, y: 2}
+  xOffsetBorders: {x: -8, y: 8}

@@ -5,10 +5,12 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine.Events;
 
+
 namespace HypaGames.AnimalTopGun
-{
+{    
     public class PhasePlayer : MonoBehaviour
     {
+        
         public UnityEvent BossPhaseStarted;
 
         public Spawner SpawnerPrefab;
@@ -107,7 +109,10 @@ namespace HypaGames.AnimalTopGun
                     enemyWave.Count,
                     enemyWave.WaveRate,
                     enemyWave.WaveSpeed,
-                    SpawnPools[enemyWave.EnemyType]
+                    SpawnPools[enemyWave.EnemyType],
+                    enemyWave.SpawnedLifeTime,
+                    enemyWave.WaveHP,
+                    enemyWave.YAngle
                     );
 
                 spawner.enabled = true;             
@@ -135,7 +140,7 @@ namespace HypaGames.AnimalTopGun
             foreach(var phase in PhaseMap.PhaseMap.Where(x => x.PhaseType == PhaseType.Fight))
             {
                 foreach(var enemyWave in phase.EnemyWave)
-                {
+                {                    
                     if (!SpawnPools.ContainsKey(enemyWave.EnemyType))
                     {
                         GameObject newSpawnPoolObj = Instantiate(SpawnPoolPrefab.gameObject);

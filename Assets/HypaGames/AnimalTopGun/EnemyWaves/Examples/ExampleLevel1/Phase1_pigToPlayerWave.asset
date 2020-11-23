@@ -15,5 +15,7 @@ MonoBehaviour:
   _phaseName: 
   EnemyWave:
   - {fileID: 11400000, guid: 7802ec12e796b684b9a093b297e38806, type: 2}
+  - {fileID: 11400000, guid: 6822ab23bffb27e48b6efc7e0ace44d9, type: 2}
+  - {fileID: 11400000, guid: cddb1cbc7c2eb8144b59a8d9d7f23109, type: 2}
   PhaseType: 1
   TimeDuration: 0

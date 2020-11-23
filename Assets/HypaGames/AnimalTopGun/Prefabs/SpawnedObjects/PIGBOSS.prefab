@@ -191,10 +191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1fa86abb20076e49b316d0efe38badc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
-  moveSpeed: 3
   _spawnedPooled: {fileID: 6950620845104599576}
-  _baseMoveStrategy: {fileID: 11400000, guid: 154e2143b6744824aa893b4bdb41f9bb, type: 2}
+  _baseMoveStrategy: {fileID: 11400000, guid: 7e6594141b8aed546926bbfb85f72863, type: 2}
 --- !u!114 &6950620845104599576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,7 +205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45374368e7ba1144597e24a90d20a4e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLifeTime: 500
 --- !u!1 &7499210305068977278
 GameObject:
   m_ObjectHideFlags: 0

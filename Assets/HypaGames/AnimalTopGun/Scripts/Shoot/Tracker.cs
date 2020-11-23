@@ -22,9 +22,9 @@ namespace HypaGames.AnimalTopGun
             
         }
 
-        public void AddToTrack()
+        public void AddToTrack(int count)
         {
-            _trackedCount++;
+            _trackedCount += count;
             Debug.Log(_trackedCount);
         }
 

@@ -6,7 +6,6 @@ namespace HypaGames.AnimalTopGun
     [CreateAssetMenu(menuName = "Hypa Games/Sentry Move Strategy")]
     public class SentryMoveStrategy : BaseMoveStrategy
     {
-        [SerializeField]
         PlayableArea PlayableArea;
         [SerializeField]
         float zOffset;

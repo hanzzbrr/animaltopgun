@@ -8,6 +8,7 @@ namespace HypaGames.AnimalTopGun
     {
         [SerializeField]
         private float _disableTime;
+        private float _nextDisableTime;
 
         [SerializeField]
         private List<ParticleSystem> _particles;
@@ -17,6 +18,7 @@ namespace HypaGames.AnimalTopGun
         public void Init(ExplosionPool explosionPool)
         {
             _explosionPool = explosionPool;
+            _nextDisableTime = Time.time + _disableTime;
         }
 
         private void OnEnable()
@@ -24,14 +26,15 @@ namespace HypaGames.AnimalTopGun
             foreach(var particle in _particles)
             {
                 particle.Play();
-            }
-            Timing.RunCoroutine(_DisableAfterTime());
+            }            
         }
 
-        private IEnumerator<float> _DisableAfterTime()
+        private void Update()
         {
-            yield return Timing.WaitForSeconds(_disableTime);
-            _explosionPool.ReturnToPool(this);
+            if(_nextDisableTime <= Time.time)
+            {
+                _explosionPool.ReturnToPool(this);
+            }
         }
     }
 

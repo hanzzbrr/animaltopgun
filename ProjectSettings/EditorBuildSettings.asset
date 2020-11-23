@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/HypaGames/AnimalTopGun/Scenes/Game.unity
     guid: 87743801482c90441aac1840bbf6904b
+  - enabled: 1
+    path: Assets/HypaGames/AnimalTopGun/Scenes/MainMenu.unity
+    guid: 5fc1537bdcf37624d96223ecfb0349aa
   m_configObjects: {}

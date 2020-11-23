@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
-using HelpersLib.Scripts;
+using UnityEngine.Events;
 using System.Linq;
 using System.Collections.Generic;
-using UnityEngine.Events;
-
+using HelpersLib.Scripts;
+using MEC;
 
 namespace HypaGames.AnimalTopGun
 {    
@@ -57,12 +56,12 @@ namespace HypaGames.AnimalTopGun
 
             CurrentPhase = PhaseMap.PhaseMap[_currentPhaseIndex];
             if (CurrentPhase.PhaseType == PhaseType.Rest)
-            {
-                StartCoroutine(PlayRestPhase());
+            {                
+                Timing.RunCoroutine(_PlayRestPhase());
             }
             else if (CurrentPhase.PhaseType == PhaseType.Fight)
-            {
-                StartCoroutine(FightPhase());
+            {                
+                Timing.RunCoroutine(_FightPhase());
             }
         }
 
@@ -71,20 +70,20 @@ namespace HypaGames.AnimalTopGun
             _nextPhaseTime = Time.time + _trackerDelay;
         }
 
-        private IEnumerator PlayRestPhase()
+        private IEnumerator<float> _PlayRestPhase()
         {
             _nextPhaseTime = Time.time + CurrentPhase.TimeDuration;
             Debug.Log("Phase BEGIN: " + CurrentPhase.name);
             while (Time.time < _nextPhaseTime)
             {
                 Debug.Log("Time: " + Time.time + " nexPhase: " + _nextPhaseTime);
-                yield return new WaitForEndOfFrame();
+                yield return Timing.WaitForOneFrame;
             }
             Debug.Log("End of phase");
             InitPhase();            
         }
 
-        private IEnumerator FightPhase()
+        private IEnumerator<float> _FightPhase()
         {
             _tracker.enabled = true;
 
@@ -122,7 +121,7 @@ namespace HypaGames.AnimalTopGun
             Debug.Log("Phase begin: " + CurrentPhase.name);
             while (_tracker.AreEnemiesLeft)
             {
-                yield return new WaitForEndOfFrame();
+                yield return Timing.WaitForOneFrame;
             }
             if(CurrentPhase.EnemyWave.Any(wave => wave.IsBossPhase))
             {

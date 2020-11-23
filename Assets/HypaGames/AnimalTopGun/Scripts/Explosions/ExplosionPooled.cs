@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
+using MEC;
 
 namespace HypaGames.AnimalTopGun
 {
@@ -25,12 +25,12 @@ namespace HypaGames.AnimalTopGun
             {
                 particle.Play();
             }
-            StartCoroutine(DisableAfterTime());
+            Timing.RunCoroutine(_DisableAfterTime());
         }
 
-        IEnumerator DisableAfterTime()
+        private IEnumerator<float> _DisableAfterTime()
         {
-            yield return new WaitForSeconds(_disableTime);
+            yield return Timing.WaitForSeconds(_disableTime);
             _explosionPool.ReturnToPool(this);
         }
     }

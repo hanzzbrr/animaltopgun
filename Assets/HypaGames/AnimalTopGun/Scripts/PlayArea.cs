@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 using HypaGames.LevelGeneration.Scripts;
-using System.Collections;
+using MEC;
 
 namespace HypaGames.AnimalTopGun
 {
@@ -21,17 +22,13 @@ namespace HypaGames.AnimalTopGun
         {
             return transform.position.z - Length;
         }
-        private void Awake()
-        {
-
-        }
         
         public void BossPhaseStarted()
-        {
-            StartCoroutine(ClampSpeed());
+        {            
+            Timing.RunCoroutine(_ClampSpeed());
         }
         float normalSpeed;
-        private IEnumerator ClampSpeed()
+        private IEnumerator<float> _ClampSpeed()
         {
             normalSpeed = Speed;
             float t = 0.0f;
@@ -39,7 +36,7 @@ namespace HypaGames.AnimalTopGun
             {
                 t += 0.1f * Time.deltaTime;
                 Speed = Mathf.Lerp(Speed, 0, t);
-                yield return new WaitForEndOfFrame();
+                yield return Timing.WaitForOneFrame;
             }            
         }
 

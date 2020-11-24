@@ -46,7 +46,7 @@ namespace HypaGames.AnimalTopGun
                 randomZOffset = Random.Range(zOffsetBorders.x, zOffsetBorders.y);
                 Debug.Log("New target: ");
             }
-            Debug.Log("pig: " + originTransform.position + " target: " + target);
+            //Debug.Log("pig: " + originTransform.position + " target: " + target);
 
         }
     }

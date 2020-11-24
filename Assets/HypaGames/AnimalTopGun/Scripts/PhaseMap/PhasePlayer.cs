@@ -23,6 +23,9 @@ namespace HypaGames.AnimalTopGun
         private Tracker _tracker;
 
         [SerializeField]
+        private PlayArea _playArea;
+
+        [SerializeField]
         private PlayableArea _playableArea;
 
         [SerializeField]
@@ -114,6 +117,7 @@ namespace HypaGames.AnimalTopGun
                     enemyWave.YAngle
                     );
 
+                spawner.transform.parent = _playArea.transform;
                 spawner.enabled = true;             
                 
             }

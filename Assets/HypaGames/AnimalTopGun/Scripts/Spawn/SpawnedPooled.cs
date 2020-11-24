@@ -27,7 +27,11 @@ namespace HypaGames.AnimalTopGun
         private void OnEnable()
         {
             lifeTime = 0f;
-
+        }
+        private void OnDisable()
+        {
+            _tracker = null;
+            Debug.Log("tracker set to null");
         }
 
         public void Update()

@@ -115,8 +115,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbecc68a1299dde4b814cc069420fedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _baseMoveStrategy: {fileID: 11400000, guid: a55630ff43590ae43a664b806d730c2f, type: 2}
   ShotPool: {fileID: 0}
   maxLifeTime: 5
+  BulletSpeed: 0
 --- !u!54 &556305535761303362
 Rigidbody:
   m_ObjectHideFlags: 0

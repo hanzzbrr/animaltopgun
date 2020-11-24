@@ -50,7 +50,7 @@ namespace HypaGames.AnimalTopGun
         }
         private void OnDeath()
         {
-            //_explosionPool.PlayExplosion(transform.position);
+            _explosionPool.PlayExplosion(transform.position);
             _spawnedPooled.EndLife();
         }
 

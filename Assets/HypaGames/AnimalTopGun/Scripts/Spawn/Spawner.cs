@@ -12,6 +12,7 @@ namespace HypaGames.AnimalTopGun
         private float _spawnRate = 0.1f;
         private float _spawnedSpeed;
 
+        private PlayArea _playArea;
         private Tracker _tracker;
         private int _spawnCounter = 0;
         private float _nextSpawnTime;
@@ -39,6 +40,7 @@ namespace HypaGames.AnimalTopGun
                 _tracker = FindObjectOfType<Tracker>();
                 _tracker.AddToTrack(_maxSpawns);
             }
+            _playArea = FindObjectOfType<PlayArea>();
         }
 
 

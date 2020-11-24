@@ -16,7 +16,7 @@ MonoBehaviour:
   EnemyType: 0
   Count: 15
   WaveSpeed: 7
-  WaveRate: 1
+  WaveRate: 0.5
   WaveHP: 3
   XOffset: 2
   YOffset: 0

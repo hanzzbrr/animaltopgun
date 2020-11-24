@@ -20,7 +20,7 @@ MonoBehaviour:
   WaveHP: 1
   XOffset: 0
   YOffset: 0
-  ZOffset: 25
+  ZOffset: 5
   Delay: 0
   YAngle: 180
   SpawnedLifeTime: 25

@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e7d6e7d3efb41542883bacb02265c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isPersistant: 0
   stat: {fileID: 0}
   startCount: 0
   prefab: {fileID: 1270691902065914744, guid: 22c794610e9c1e441b382a503c15cfe3, type: 3}
@@ -196,6 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab0a060e1dbf3e642a1a8a3c900275a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isPersistant: 0
   stat: {fileID: 0}
   startCount: 0
   prefab: {fileID: 2204947608640195927, guid: 7438f44efcce2054093c89d6dda12975, type: 3}
@@ -275,6 +277,7 @@ MonoBehaviour:
   PrefabData: {fileID: 369670104927212134, guid: b326917c2887bda42a04b93c21788365,
     type: 3}
   _tracker: {fileID: 1016231951}
+  _playArea: {fileID: 1403903807}
   _playableArea: {fileID: 950919855}
   _trackerDelay: 2.5
   PhaseMap: {fileID: 11400000, guid: 7aa6ea8834345cb45a575e19582007f7, type: 2}
@@ -470,6 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e7d6e7d3efb41542883bacb02265c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isPersistant: 0
   stat: {fileID: 0}
   startCount: 0
   prefab: {fileID: 1270691902065914744, guid: de4a118bb55beb343a16edd5cf4df9a6, type: 3}

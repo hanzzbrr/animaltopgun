@@ -7,11 +7,15 @@ namespace HypaGames.AnimalTopGun
     // have a life cycle dependent on pool
     public class ShotPooled : MonoBehaviour
     {
+        [SerializeField]
+        private BaseMoveStrategy _baseMoveStrategy;
+
         public ShotPool ShotPool;
 
         [SerializeField]
         private float maxLifeTime = 5f;
         private float lifeTime;
+        public float BulletSpeed;
 
         public void Init(ShotPool shotPool)
         {
@@ -20,7 +24,7 @@ namespace HypaGames.AnimalTopGun
 
         private void OnEnable()
         {
-            lifeTime = 0f;
+            lifeTime = 0f;            
         }
 
         public void Update()
@@ -30,6 +34,7 @@ namespace HypaGames.AnimalTopGun
             {
                 EndLife();
             }
+            _baseMoveStrategy.PerformMove(transform, BulletSpeed);
         }
 
         public void EndLife()

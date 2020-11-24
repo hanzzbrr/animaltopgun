@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsTracked: 1
   EnemyType: 0
-  Count: 50
+  Count: 15
   WaveSpeed: 7
-  WaveRate: 0.25
+  WaveRate: 1
   WaveHP: 3
   XOffset: 2
   YOffset: 0

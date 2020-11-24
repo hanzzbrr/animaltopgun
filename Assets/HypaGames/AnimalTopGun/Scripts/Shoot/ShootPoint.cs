@@ -77,7 +77,8 @@ namespace HypaGames.AnimalTopGun
                 {
                     transforms.Add(shotPooled.transform);
                     shotPooled.Init(shotPool);
-                }
+                    shotPooled.enabled = true;
+                }                
                 shotPool.ActivateObject(shotPooled.gameObject);
 
                 transforms.capacity = shotPool.GetPoolCount();

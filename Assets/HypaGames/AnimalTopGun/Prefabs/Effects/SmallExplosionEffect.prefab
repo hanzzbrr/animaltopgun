@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daa3b7dd8e3a0a04ba8266668e2f8864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _disableTime: 4
+  _disableTime: 2
   _particles:
   - {fileID: 8981071928973873411}
   - {fileID: 8981071930916654265}

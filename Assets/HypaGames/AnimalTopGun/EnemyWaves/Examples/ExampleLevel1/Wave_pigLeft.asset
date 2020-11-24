@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsTracked: 1
   EnemyType: 0
-  Count: 7
-  WaveSpeed: 5
-  WaveRate: 1
-  WaveHP: 15
+  Count: 50
+  WaveSpeed: 7
+  WaveRate: 0.25
+  WaveHP: 3
   XOffset: -2
   YOffset: 0
-  ZOffset: 20
+  ZOffset: 10
   Delay: 0
   YAngle: 180
   SpawnedLifeTime: 19

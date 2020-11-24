@@ -30,23 +30,23 @@ namespace HypaGames.AnimalTopGun
             transforms = new TransformAccessArray(0, -1);
         }
 
-
-        private void Update()
-        {
-            PerformShot();
-            PerformMove();
-        }
-
         void OnDisable()
-        {
-            FinishMove();
-        }
-
-        private void FinishMove()
         {
             moveHandle.Complete();
             transforms.Dispose();
         }
+
+        private void Update()
+        {
+            PerformShot();
+            PerformMove();            
+        }
+        private void LateUpdate()
+        {
+            moveHandle.Complete();
+        }
+
+
 
         private void PerformMove()
         {

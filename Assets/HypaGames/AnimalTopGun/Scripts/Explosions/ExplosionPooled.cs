@@ -33,6 +33,7 @@ namespace HypaGames.AnimalTopGun
         {
             if(_nextDisableTime <= Time.time)
             {
+                Debug.Log("Return explosion to pool");
                 _explosionPool.ReturnToPool(this);
             }
         }

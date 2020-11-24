@@ -38,7 +38,7 @@ namespace HypaGames.AnimalTopGun
         {
             ShowHit();
             HP--;
-            if(HP < 0)
+            if(HP <= 0)
             {
                 OnDeath();
             }
@@ -50,7 +50,7 @@ namespace HypaGames.AnimalTopGun
         }
         private void OnDeath()
         {
-            _explosionPool.PlayExplosion(transform.position);
+            //_explosionPool.PlayExplosion(transform.position);
             _spawnedPooled.EndLife();
         }
 

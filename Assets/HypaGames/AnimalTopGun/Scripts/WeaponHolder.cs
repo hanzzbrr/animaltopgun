@@ -12,7 +12,6 @@ namespace HypaGames.AnimalTopGun
 
         private void Awake()
         {
-            //SpawnGun();
         }
 
         private void SpawnGun()
